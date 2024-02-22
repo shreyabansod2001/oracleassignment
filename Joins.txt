@@ -1,0 +1,31 @@
+
+//Inner Join
+
+SELECT Orders.OrderID, Customers.CustomerID, FirstName, LastName, Email, OrderDate, ProductName, Quantity, TotalAmount 
+FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+//Left Outer Join
+
+SELECT Customers.CustomerID, FirstName, LastName, Email 
+FROM Customers 
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+
+//Right Outer Join
+
+SELECT Customers.CustomerID, FirstName, LastName, Email 
+FROM Customers 
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+
+//Full Outer Join
+
+SELECT Orders.OrderID,Customers.CustomerID, FirstName, LastName, Email 
+FROM Customers 
+FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+
+
+

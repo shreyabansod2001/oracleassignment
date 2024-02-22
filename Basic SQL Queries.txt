@@ -1,0 +1,74 @@
+//Basic Queries
+
+
+SELECT*FROM Customers ;
+
+
+
+SELECT*FROM Orders ;
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+SELECT*FROM Orders ORDER BY OrderID;
+
+
+DELETE from Customers where CustomerID=6;
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+INSERT INTO Customers(CustomerID,FirstName,LastName,PhoneNumber) VALUES (6,'Kumar','Sanu','9155436799');
+
+
+UPDATE Customers set FirstName='Mahajan' where CustomerID=6;
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+SELECT * FROM Customers WHERE  PhoneNumber= '7634567890';
+
+
+SELECT * FROM Customers WHERE  LastName= 'Sanu';
+
+
+SELECT * FROM  Customers ORDER BY LastName DESC;
+
+
+SELECT Email, COUNT(*) AS Customers_Count FROM Customers GROUP BY Email;
+
+
+SELECT * FROM Customers WHERE LastName LIKE'S%';
+
+
+ALTER TABLE Customers 
+ADD Gender VARCHAR(10);
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+UPDATE Customers set Gender='Male' where CustomerID=1;
+
+UPDATE Customers set Gender='Male' where CustomerID=2;
+
+UPDATE Customers set Gender='Male' where CustomerID=5;
+
+UPDATE Customers set Gender='Male' where CustomerID=8;
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+ALTER TABLE Customers 
+ADD Age INt;
+
+
+SELECT*FROM Customers ORDER BY CustomerID;
+
+
+ALTER TABLE Customers 
+DROP COLUMN Age;

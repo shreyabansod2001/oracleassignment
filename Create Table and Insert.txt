@@ -1,0 +1,86 @@
+//Create Table Customers
+
+CREATE TABLE Customers (  
+    CustomerID INT PRIMARY KEY,  
+    FirstName VARCHAR(50) NOT NULL,  
+    LastName VARCHAR(50) NOT NULL,  
+    Email VARCHAR(100) UNIQUE,  
+    PhoneNumber VARCHAR(20)  
+);
+
+
+
+//Insert Values in the Customers table
+
+INSERT INTO Customers VALUES (1, 'John', 'Smith', 'john@example.com', '7634567890');
+
+INSERT INTO Customers VALUES (2, 'Jane', 'Doe', 'jane@example.com', '9876543210');
+
+INSERT INTO Customers VALUES (3, 'Michael', 'Johnson', 'michael@example.com', '5575905845');
+
+INSERT INTO Customers VALUES (4, 'Emily', 'Taylor', 'emily@example.com', '4423764344');
+
+INSERT INTO Customers VALUES (5, 'David', 'Jones', 'david@example.com', '9980654327');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName,PhoneNumber) VALUES (6,'Kumar','Sanu','9155436799');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName,PhoneNumber) VALUES (7,'Shikhar','Dhavan','9155436799');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName) VALUES (8,'virat','Kohli');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName) VALUES (9,'Shreyas','Ayyar');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName,Email) VALUES (10,'Shubhman','Gill','shubhman@gmail.com');
+
+INSERT INTO Customers(CustomerID,FirstName,LastName) VALUES (11,'Suryakumar','Yadav');
+
+
+
+//Create table Orders
+
+CREATE TABLE Orders (  
+    OrderID INT PRIMARY KEY,  
+    CustomerID INT,  
+    OrderDate DATE,  
+    ProductName VARCHAR(100),  
+    Quantity INT,  
+    TotalAmount DECIMAL(10, 2),  
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)  
+);
+
+
+
+
+//Insert Values into Orders table
+
+INSERT INTO Orders VALUES (101, 1, TO_DATE('2024-01-20','YYYY-MM-DD'), 'Laptop', 2, 100000.00);
+
+INSERT INTO Orders VALUES (102, 2, TO_DATE('2024-01-19','YYYY-MM-DD'), 'Pendrive', 5, 2000.00);
+
+INSERT INTO Orders VALUES (103, 3, TO_DATE('2024-01-18','YYYY-MM-DD'), 'Mobile', 3, 80000.00);
+
+INSERT INTO Orders VALUES (104, 4, TO_DATE('2024-01-17','YYYY-MM-DD'), 'Keyboard', 4, 12000.00);
+
+INSERT INTO Orders VALUES (105, 5, TO_DATE('2024-01-16','YYYY-MM-DD'), 'Mouse', 6, 50000.00);
+
+INSERT INTO Orders VALUES (106, 1, TO_DATE('2024-01-15','YYYY-MM-DD'), 'Tablet', 2, 30000.00);
+
+INSERT INTO Orders VALUES (107, 2, TO_DATE('2024-01-14','YYYY-MM-DD'), 'Computer', 2, 200000.00);
+
+INSERT INTO Orders VALUES (108, 3, TO_DATE('2024-01-13','YYYY-MM-DD'), 'TV', 1, 45000.00);
+
+INSERT INTO Orders VALUES (109, 4, TO_DATE('2024-01-12','YYYY-MM-DD'), 'Printer', 3, 300000.00);
+
+INSERT INTO Orders VALUES (110, 5, TO_DATE('2024-01-11','YYYY-MM-DD'), 'Scanner', 4, 150000.00);
+
+INSERT INTO Orders (OrderID,CustomerID,OrderDate,ProductName)VALUES (111, 1, TO_DATE('2024-01-10','YYYY-MM-DD'), 'AC');
+
+INSERT INTO Orders VALUES (112, 2, TO_DATE('2024-01-09','YYYY-MM-DD'), 'Fridge', 1, 13000.00);
+
+INSERT INTO Orders (OrderID,CustomerID,OrderDate,ProductName)VALUES (115, 5, TO_DATE('2024-01-05','YYYY-MM-DD'), 'LaptopBag');
+
+INSERT INTO Orders (OrderID,CustomerID,ProductName,Quantity)  VALUES (113, 3,'Fan', 3);
+
+INSERT INTO Orders (OrderID,CustomerID,OrderDate,ProductName,TotalAmount)  VALUES (114, 4, TO_DATE('2024-01-06','YYYY-MM-DD'), 'Cooler', 4000.00);
+
+

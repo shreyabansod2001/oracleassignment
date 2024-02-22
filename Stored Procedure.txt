@@ -1,0 +1,30 @@
+//Non Parameterised Stored Procedure.
+//All the rows are updated.
+
+CREATE OR REPLACE procedure Discounts 
+As 
+BEGIN 
+UPDATE Orders 
+SET TotalAmount=TotalAmount-(TotalAmount*10/100) 
+WHERE ProductName=ProductName; 
+END;
+
+
+//Call  Stored Procedure.
+CALL Discounts;
+
+
+
+//Only one row is updated.
+
+CREATE OR REPLACE procedure Discounts 
+As 
+BEGIN 
+UPDATE Orders 
+SET TotalAmount=TotalAmount-(TotalAmount*10/100) 
+WHERE ProductName='Laptop'; 
+END;
+
+
+//Call Stored Procedure.
+CALL Discounts;
